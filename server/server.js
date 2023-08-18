@@ -1,7 +1,7 @@
 import express from "express";
 import { MongoClient } from "mongodb";
 import path from "path";
-import template from "../template";
+import template from "./../template";
 import devBundle from "./devBundle";
 
 const app = express();
