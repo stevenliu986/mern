@@ -3,13 +3,14 @@ import { MongoClient } from "mongodb";
 import path from "path";
 import template from "./../template";
 import devBundle from "./devBundle";
+const CURRENT_WORKING_DIR = process.cwd();
 
 const app = express();
 devBundle.compile(app);
-const CURRENT_WORKING_DIR = process.cwd();
-app.use("./dist", express.static(path.join(CURRENT_WORKING_DIR, "dist")));
+
+app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "dist")));
 app.get("/", (req, res) => {
-  return res.status(200).send(template);
+  res.status(200).send(template());
 });
 
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/test";
