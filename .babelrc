@@ -1,17 +1,18 @@
 {
-    "presets": [
-    ["@babel/preset-env",
-    {
-    "targets": {
-    "node": "current"
-    }
-    }
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
     ],
     "@babel/preset-react"
-    ],
-    "plugins": [
+  ],
+  "plugins": [
     "react-hot-loader/babel",
     // 如果要使用React的JSX形式的文件，需要在babel设置里的plugins下面添加下面的语句
     "@babel/plugin-transform-react-jsx"
-    ]
-    }
+  ]
+}
